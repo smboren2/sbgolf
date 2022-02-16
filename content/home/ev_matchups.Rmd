@@ -6,7 +6,9 @@ design:
 weight: 2
 ---
 
-```{r, include=FALSE, echo=FALSE, warning=FALSE, message=FALSE,results='hide'}
+<center> <h2> Round 1 Matchups</h2> </center>
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE,results='hide'}
 df <- readr::read_csv("../../static/data/genesis_r1.csv")
 ```
 
@@ -38,6 +40,8 @@ blue_pal <- function(x) {
 
 
 ```
+
+<div align="center">
 
 ```{r, warning=FALSE, message=FALSE, echo = FALSE}
 reactable(df, #fullWidth = FALSE,
@@ -125,3 +129,4 @@ reactable(df, #fullWidth = FALSE,
 
 ```
 
+</div>
