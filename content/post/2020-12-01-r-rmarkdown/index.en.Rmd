@@ -35,3 +35,11 @@ pie(
   init.angle = -50, border = NA
 )
 ```
+
+```{r}
+library(gt)
+
+gt(cars[1:4,])
+
+```
+

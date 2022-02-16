@@ -1,0 +1,127 @@
+---
+title: "The Genesis Invitational"
+output: html_document
+design:
+  columns: "1"
+weight: 2
+---
+
+```{r, include=FALSE, echo=FALSE, warning=FALSE, message=FALSE,results='hide'}
+df <- readr::read_csv("../../static/data/genesis_r1.csv")
+```
+
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE,results='hide'}
+library(reactable)
+library(reactablefmtr)
+library(htmltools)
+library(stringr)
+
+orange_pal <- function(x) {
+  if (!is.na(x)) {
+    #rgb(colorRamp(RColorBrewer::brewer.pal(9, name = "Oranges"))(x), maxColorValue = 255)
+    rgb(colorRamp(c("#E8F2E4", "#51A341"))(x), maxColorValue = 255)
+  } else {
+    "#ffffff" #white
+  }
+}
+
+blue_pal <- function(x) {
+  if (!is.na(x)) {
+    #rgb(colorRamp(RColorBrewer::brewer.pal(9, name = "Blues"))(x), maxColorValue = 255)
+    rgb(colorRamp(c("#E15135", "#FFE7E1"))(x), maxColorValue = 255)
+  } else {
+    "#ffffff"
+  }
+}
+
+
+```
+
+```{r, warning=FALSE, message=FALSE, echo = FALSE}
+reactable(df, #fullWidth = FALSE,
+          theme = reactableTheme(cellStyle = list(display = "flex", flexDirection = "column", justifyContent = "center")),
+          #compact = TRUE, 
+          pagination = FALSE, highlight = TRUE, #outlined = TRUE,
+          defaultColDef = colDef(headerStyle = list(`border-bottom` = "solid", 
+                                                    fontFamily = "Josefin Sans, sans-serif",
+                                                    fontSize = "18px")),
+          style = list(fontFamily = "Josefin Sans, sans-serif", fontSize = "16px", maxWidth = 760),
+          columns = 
+            list(
+              p1_player_image = colDef(cell = embed_img(height = 40, width = 40), maxWidth = 60,
+                                      align = "right", name = ""),
+              p2_player_image = colDef(cell = embed_img(height = 40, width = 40), maxWidth = 60,
+                                       align = "right", name = ""),
+              p1_ev = colDef(format = colFormat(percent = TRUE, digits = 1),
+                name = "EV",
+                align = "center",
+                maxWidth = 75,
+                style = function(value) {
+                  if(is.na(value)) {
+                    color <- orange_pal(value)
+                    } else if (value > 0) {
+                      norm <- (value - min(df$p1_ev[df$p1_ev > 0], df$p2_ev[df$p2_ev > 0])) / (max(df$p1_ev[df$p1_ev > 0], df$p2_ev[df$p2_ev > 0]) - min(df$p1_ev[df$p1_ev > 0], df$p2_ev[df$p2_ev > 0]))
+                      color <- orange_pal(norm)
+                      } else {
+                        norm <- (value - min(df$p1_ev[df$p1_ev < 0], df$p2_ev[df$p2_ev < 0])) / (max(df$p1_ev[df$p1_ev < 0], df$p2_ev[df$p2_ev < 0]) - min(df$p1_ev[df$p1_ev < 0], df$p2_ev[df$p2_ev < 0]))
+                        color <- blue_pal(norm)
+                      }
+                  
+                  list(background = color)}),
+              
+              p2_ev = colDef(format = colFormat(percent = TRUE, digits = 1),
+                name = "EV",
+                align = "center",
+                maxWidth = 75,
+                style = function(value) {
+                  if(is.na(value)) {
+                    color <- orange_pal(value)
+                  } else if (value > 0) {
+                    norm <- (value - min(df$p1_ev[df$p1_ev > 0], df$p2_ev[df$p2_ev > 0])) / (max(df$p1_ev[df$p1_ev > 0], df$p2_ev[df$p2_ev > 0]) - min(df$p1_ev[df$p1_ev > 0], df$p2_ev[df$p2_ev > 0]))
+                    color <- orange_pal(norm)
+                  } else {
+                    norm <- (value - min(df$p1_ev[df$p1_ev <= 0], df$p2_ev[df$p2_ev <= 0])) / (max(df$p1_ev[df$p1_ev <= 0], df$p2_ev[df$p2_ev <= 0]) - min(df$p1_ev[df$p1_ev <= 0], df$p2_ev[df$p2_ev <= 0]))
+                    color <- blue_pal(norm)
+                  }
+                  
+                  list(background = color)}),
+              
+              p1_player_name = colDef(name = "", align = "left", html = TRUE, maxWidth = 140,
+                                      cell = function(x) {
+                                        last_name <- word(x, 2, -1)
+                                        first_name <- word(x, 1)
+                                        
+                                        #htmltools::div(htmltools::div(style = 'line-height:10px', span(style = 'font-weight:bold;font-variant:small-caps;font-size:18px'), last_name),
+                                        #htmltools::div(style = 'line-height:12px', span(style = 'color:black;font-size:12px'), first_name))
+                                        glue::glue(
+                                         "<div style='line-height:10px'><span style='font-weight:bold;font-variant:small-caps;font-size:18px'>{last_name}</div>
+                                         <div style='line-height:12px'><span style ='color:black;font-size:12px'>{first_name}</span></div>")
+                                        
+                                      }),
+              draftkings_p1 = colDef("", align = "center", maxWidth = 50),
+              smb_us = colDef(name = "Model Fair", align = "center", maxWidth = 110,
+                                  style = list(borderLeft = "2px solid rgba(0, 0, 0, 1)",
+                                               borderRight = "2px solid rgba(0, 0, 0, 1)")),
+              p2_player_name = colDef(name = "", align = "right", html = TRUE, maxWidth = 140,
+                                      cell = function(x) {
+                                        last_name <- word(x, 2, -1)
+                                        first_name <- word(x, 1)
+                                        
+                                        #htmltools::div(htmltools::div(style = 'line-height:10px', span(style = 'font-weight:bold;font-variant:small-caps;font-size:18px'), last_name),
+                                        #htmltools::div(style = 'line-height:12px', span(style = 'color:black;font-size:12px'), first_name))
+                                        glue::glue(
+                                          "<div style='line-height:12px'><span style='font-weight:bold;font-variant:small-caps;font-size:20px'>{last_name}</div>
+                                          <div style='line-height:12px'><span style ='color:black;font-size:14px'>{first_name}</span></div>")
+                                        
+                                      }),
+              draftkings_p2 = colDef("", align = "center", maxWidth = 50))
+          # title 
+          #columnGroups = 
+          # list(colGroup(name = "Golfer 1", columns = c("p1_ev","p1_player_image","p1_player_name","draftkings_p1")),
+          #     colGroup(name = "Golfer 2", columns = c("p2_ev","p2_player_image","p2_player_name","draftkings_p2")))
+          )
+
+```
+

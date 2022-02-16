@@ -1,0 +1,372 @@
+---
+title: "Live Leaderboard"
+output: html_document
+design:
+  columns: "1"
+weight: 1
+---
+
+```{r, include=FALSE, echo=FALSE, warning=FALSE, message=FALSE,results='hide'}
+library(tidyverse)
+library(lme4)
+
+sg_timeseries <- read_csv("~/Documents/pga-tools/sg_timeseries_alltours.csv")
+sg_holt <- read_csv("~/Documents/pga-tools/sg_timeseries_holt_alltours.csv")
+
+sg_timeseries <- inner_join(sg_timeseries, sg_holt)
+sg_timeseries$pid <- paste0("p", sg_timeseries$dg_id)
+
+player_class <- read_csv("~/Documents/pga-tools/tour_classifications.csv")
+field_rating <- read_csv("~/Documents/pga-tools/field_rating.csv")
+
+all_df <- inner_join(sg_timeseries, player_class)
+all_df$event_id_full <- with(all_df, paste(tour, year, season, event_id, sep = "-"))
+
+all_df <- all_df %>% left_join(field_rating, by = c("event_id_full", "event_name", "round_num"))
+
+
+# fill NA based on tour
+# filter(all_df, is.na(sg_forecast_r75)) %>% group_by(tour) %>% summarize(mean(sg_total))
+all_df <- 
+  all_df %>% 
+  #mutate(sg_holtcast_75 = coalesce(sg_holtcast_75, sg_holtcast_all)) %>%
+  mutate(sg_forecast_all = case_when(is.na(sg_forecast_all) & tour == "euro" ~ -1.83,
+                                     is.na(sg_forecast_all) & tour == "kft" ~ -1.55,
+                                     is.na(sg_forecast_all) & tour == "pga" ~ -2.13,
+                                     TRUE ~ as.numeric(sg_forecast_all)),
+         sg_forecast_r75 = case_when(is.na(sg_forecast_r75) & tour == "euro" ~ -1.83,
+                                     is.na(sg_forecast_r75) & tour == "kft" ~ -1.55,
+                                     is.na(sg_forecast_r75) & tour == "pga" ~ -2.13,
+                                     TRUE ~ as.numeric(sg_forecast_r75)),
+         # sg_forecast_r30 = case_when(is.na(sg_forecast_r30) & tour == "euro" ~ -1.83,
+         #                             is.na(sg_forecast_r30) & tour == "kft" ~ -1.55,
+         #                             is.na(sg_forecast_r30) & tour == "pga" ~ -2.13,
+         #                             TRUE ~ as.numeric(sg_forecast_r30)),
+         sg_forecast_r100 = case_when(is.na(sg_forecast_r100) & tour == "euro" ~ -1.83,
+                                     is.na(sg_forecast_r100) & tour == "kft" ~ -1.55,
+                                     is.na(sg_forecast_r100) & tour == "pga" ~ -2.13,
+                                     TRUE ~ as.numeric(sg_forecast_r100)),
+         sg_holtcast_75 = case_when(is.na(sg_holtcast_75) & tour == "euro" ~ -1.83,
+                                      is.na(sg_holtcast_75) & tour == "kft" ~ -1.55,
+                                      is.na(sg_holtcast_75) & tour == "pga" ~ -2.13,
+                                      TRUE ~ as.numeric(sg_holtcast_75)),
+         sg_holtcast_100 = case_when(is.na(sg_holtcast_100) & tour == "euro" ~ -1.83,
+                                    is.na(sg_holtcast_100) & tour == "kft" ~ -1.55,
+                                    is.na(sg_holtcast_100) & tour == "pga" ~ -2.13,
+                                    TRUE ~ as.numeric(sg_holtcast_100)),
+         sg_holtcast_all = case_when(is.na(sg_holtcast_all) & tour == "euro" ~ -1.83,
+                                      is.na(sg_holtcast_all) & tour == "kft" ~ -1.55,
+                                      is.na(sg_holtcast_all) & tour == "pga" ~ -2.13,
+                                      TRUE ~ as.numeric(sg_holtcast_all)))
+
+# count of golfers in field
+sof <-
+  all_df %>%
+  group_by(tour, year, season, event_id, course_num, round_num) %>%
+  summarize(count_in_field = n()) %>%
+  ungroup()
+
+all_df <- inner_join(all_df, sof, by = c("tour", "year", "season", "event_id", "course_num", "round_num")) 
+
+all_df <- 
+  all_df %>% 
+  mutate(round_date = date - 4 + round_num) %>%
+  group_by(pid) %>% 
+  mutate(days_since_last_round = as.integer(round_date - lag(round_date))) %>%
+  ungroup() %>%
+  replace_na(list(days_since_last_round = 400, field_rating = 0))
+  
+# need to create course difficulty based on event + course for US Opens or others
+scoring_avgs <- 
+  all_df %>% 
+  mutate(course_id = ifelse(tour == "euro", paste0("eur-", course_name), paste0(tour, "-", course_num))) %>%
+  group_by(tour, season, year, event_id, course_id, date) %>% 
+  summarize(mean_score = mean(round_score),
+            sd_score = sd(round_score)) %>% 
+  group_by(course_id) %>% 
+  arrange(date) %>% 
+  mutate(expected_scoring_avg = lag(mean_score),
+         expected_scoring_sd  = lag(sd_score)) %>%
+  ungroup() %>% 
+  replace_na(list(expected_scoring_avg = 71,
+                  expected_scoring_sd = 2.9))
+
+all_df <- 
+  all_df %>% 
+  mutate(course_id = ifelse(tour == "euro", paste0("eur-", course_name), paste0(tour, "-", course_num))) %>%
+  inner_join(scoring_avgs, by = c("tour", "year", "season", "event_id", "course_id", "date"))
+
+all_df$pct_euro_75 <- all_df$count_euro_75/(all_df$count_euro_75 + all_df$count_kft_75 + all_df$count_pga_75)
+all_df$pct_pga_75 <- all_df$count_pga_75/(all_df$count_euro_75 + all_df$count_kft_75 + all_df$count_pga_75)
+all_df$pct_kft_75 <- all_df$count_kft_75/(all_df$count_euro_75 + all_df$count_kft_75 + all_df$count_pga_75)
+
+#ggplot(all_df, aes(sg_total)) + geom_histogram()
+all_df <- filter(all_df, abs(sg_total) <= 15)
+#all_df <- filter(all_df, abs(sg_forecast_r75) <= 5)
+#all_df <- filter(all_df, abs(sg_holtcast_75) <= 6)
+
+
+all_df$tour_class_new <- with(all_df, ifelse(pct_euro_75 >= pct_pga_75 & pct_euro_75 >= pct_kft_75, "euro",
+                                         ifelse(pct_pga_75 >= pct_kft_75 & pct_pga_75 >= pct_euro_75, "pga","kft")))
+
+
+
+```
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE,results='hide'}
+library(reactable)
+library(reactablefmtr)
+library(htmltools)
+
+color_generator <- scales::col_numeric(c("steelblue", "white"), domain = NULL)
+#color_generator(seq(10,100,10)) %>% scales::show_col()
+
+#scales::show_col(rgb(colorRamp(c("#4682B4", "#ffffff"))(seq(0,1,0.01)), maxColorValue = 255))
+#scales::show_col(RColorBrewer::brewer.pal(9, name = "Blues"))
+#RColorBrewer::brewer.pal(9, name = "Blues")
+
+orange_pal <- function(x) {
+  if (!is.na(x)) {
+    #rgb(colorRamp(RColorBrewer::brewer.pal(9, name = "Oranges"))(x), maxColorValue = 255)
+    rgb(colorRamp(c("#ffffff", "#FFA500"))(x), maxColorValue = 255)
+  } else {
+    "#ffffff" #white
+  }
+}
+
+blue_pal <- function(x) {
+  if (!is.na(x)) {
+    #rgb(colorRamp(RColorBrewer::brewer.pal(9, name = "Blues"))(x), maxColorValue = 255)
+    rgb(colorRamp(c("#4682B4", "#ffffff"))(x), maxColorValue = 255)
+  } else {
+    "#ffffff"
+  }
+}
+
+
+field <- read_csv("https://feeds.datagolf.com/field-updates?tour=pga&file_format=csv&key=874c4b2cb26cc8439f7b847a079c")
+
+source("~/Documents/DFS/PGA/dk_functions.R")
+contests <- get_dk_contests("GOLF")
+contest_example <- get_dk_contest_detail(123128925)
+
+minimax_players <- get_dk_draftables(62716)$draftables
+minimax_players <- filter(minimax_players, status != "O")
+
+minimax_players$player_name <- paste0(minimax_players$lastName, ", ", minimax_players$firstName)
+
+images_df <- minimax_players %>% select(player_name, salary, playerImage160)
+
+
+data <- 
+  filter(all_df, tour == "pga", event_id == 4, year == 2022) %>%
+  mutate(measured_rounds = as.integer(!is.na(sg_putt))) %>%
+  select(fin_text, player_name, round_num, course_name, measured_rounds,
+         sg_ott, sg_app, sg_arg, sg_t2g, sg_putt, sg_total) %>% 
+  group_by(player_name) %>% 
+  filter(round_num == max(round_num)) %>% 
+  select(-measured_rounds) %>% 
+  left_join(images_df, by = "player_name") %>% 
+  select(fin_text, player_name, salary, everything()) %>% 
+  ungroup() %>% 
+  select(-playerImage160, -round_num, -course_name)
+
+fix_fin <- filter(data, fin_text != "CUT") %>% mutate(fin_text = as.numeric(gsub(fin_text, pattern = "T", replacement = "")))
+cut_fin <- filter(data, fin_text == "CUT") %>% mutate(fin_text = NA_real_)
+
+data <- bind_rows(fix_fin, cut_fin)
+# function which returns background colour based on cell value (using colour map)
+# also takes column name as an input, which allows to get max and min
+stylefunc <- function(value, index, name) {
+  normalized <- (value - min(mtcars[name], na.rm = T)) /
+    (max(mtcars[name], na.rm = T) - min(mtcars[name], na.rm = T))
+  color <- orange_pal(normalized)
+  list(background = color)
+}
+
+# list giving column formatting (using style function) for single column
+coldefs <- list(
+  reactable::colDef(style = stylefunc)
+)
+
+
+
+
+
+# 
+
+```
+
+
+```{r, warning=FALSE, message=FALSE, echo = FALSE}
+reactable(data,
+            #theme = reactableTheme(cellStyle = list(fontFamily = "Roboto")),
+            defaultColDef = colDef(headerStyle = list(`border-bottom` = "solid", 
+                                                      fontFamily = "Josefin Sans, sans-serif",
+                                                      fontSize = "16px")),
+            # defaultColDef = colDef(headerStyle = list(borderDown = "2px solid rgba(0, 0, 0, 1)",
+            #                                           background = "#f7f7f8")),
+            style = list(fontFamily = "Josefin Sans, sans-serif", fontSize = "14px"),
+            # Add theme for the top border
+            # theme = reactableTheme(
+            #   headerStyle = list(
+            #     "&:hover[aria-sort]" = list(background = "hsl(0, 0%, 96%)"),
+            #     "&[aria-sort='ascending'], &[aria-sort='descending']" = list(background = "hsl(0, 0%, 96%)"),
+            #     borderColor = "#555"
+            #   )
+            # ),
+            # groupBy = c("player_name"),
+            columns = list(
+              playerImage160 = colDef(cell = embed_img(), 
+                                      align = "center", name = ""),
+              course_name = colDef(name = "Course", minWidth = 150),
+              player_name = colDef(name = "Player", minWidth = 200),
+              # measured_rounds = colDef(name = "Measured Rounds"),
+              sg_total = colDef(
+                name = "SG: Total",
+                style = function(value) {
+                  if(is.na(value)) {
+                    color <- orange_pal(value)
+                  } else if (value > 0) {
+                    norm <- (value - min(data$sg_total[data$sg_total > 0])) / 
+                      (max(data$sg_total[data$sg_total > 0]) - min(data$sg_total[data$sg_total > 0]))
+                    color <- orange_pal(norm)
+                  } else {
+                    norm <- (value - min(data$sg_total[data$sg_total < 0])) / 
+                      (max(data$sg_total[data$sg_total < 0]) - min(data$sg_total[data$sg_total < 0]))
+                    color <- blue_pal(norm)
+                  }
+
+                #normalized <- (value - min(data$sg_total)) / (max(data$sg_total) - min(data$sg_total))
+                #midpoint <- which.min(abs(data$sg_total))
+                #color <- orange_pal(normalized)
+                list(background = color, 
+                     borderLeft = "2px solid rgba(0, 0, 0, 1)",
+                     align = "center")}),
+              # measured_rounds = colDef(aggregate = "sum"),
+              # SG OTT 
+              sg_ott = colDef(
+                name = "SG: OTT",
+                aggregate = "sum", 
+                align = "center", 
+                style = function(value) {
+                  if(is.na(value)) {
+                    color <- orange_pal(value)
+                  } else if (value > 0) {
+                    norm <- (value - min(data$sg_ott[data$sg_ott > 0], na.rm = TRUE)) / 
+                      (max(data$sg_ott[data$sg_ott > 0], na.rm = TRUE) - min(data$sg_ott[data$sg_ott > 0], na.rm = TRUE))
+                    color <- orange_pal(norm)
+                  } else {
+                    norm <- (value - min(data$sg_ott[data$sg_ott < 0], na.rm = TRUE)) / 
+                      (max(data$sg_ott[data$sg_ott < 0], na.rm = TRUE) - min(data$sg_ott[data$sg_ott < 0], na.rm = TRUE))
+                    color <- blue_pal(norm)
+                  }
+                  
+                  list(background = color, 
+                       borderLeft = "2px solid rgba(0, 0, 0, 1)",
+                       align = "center")}),
+              # SG APP
+              sg_app = colDef(name = "SG: APP",
+                              aggregate = "sum", 
+                              align = "center",
+                              style = function(value) {
+                                if(is.na(value)) {
+                                  color <- orange_pal(value)
+                                } else if (value > 0) {
+                                  norm <- (value - min(data$sg_app[data$sg_app > 0], na.rm = TRUE)) / 
+                                    (max(data$sg_app[data$sg_app > 0], na.rm = TRUE) - min(data$sg_app[data$sg_app > 0], na.rm = TRUE))
+                                  color <- orange_pal(norm)
+                                } else {
+                                  norm <- (value - min(data$sg_app[data$sg_app < 0], na.rm = TRUE)) / 
+                                    (max(data$sg_app[data$sg_app < 0], na.rm = TRUE) - min(data$sg_app[data$sg_app < 0], na.rm = TRUE))
+                                  color <- blue_pal(norm)
+                                }
+                                list(background = color, 
+                                     align = "center")}),
+              sg_arg = colDef(name = "SG: ARG", 
+                              aggregate = "sum",
+                              align = "center",
+                              style = function(value) {
+                                if(is.na(value)) {
+                                  color <- orange_pal(value)
+                                } else if (value > 0) {
+                                  norm <- (value - min(data$sg_arg[data$sg_arg > 0], na.rm = TRUE)) / 
+                                    (max(data$sg_arg[data$sg_arg > 0], na.rm = TRUE) - min(data$sg_arg[data$sg_arg > 0], na.rm = TRUE))
+                                  color <- orange_pal(norm)
+                                } else {
+                                  norm <- (value - min(data$sg_arg[data$sg_arg < 0], na.rm = TRUE)) / 
+                                    (max(data$sg_arg[data$sg_arg < 0], na.rm = TRUE) - min(data$sg_arg[data$sg_arg < 0], na.rm = TRUE))
+                                  color <- blue_pal(norm)
+                                }
+                                list(background = color, 
+                                     align = "center")}),
+              # SG T2G
+              sg_t2g = colDef(name = "SG: T2G",
+                              aggregate = "sum", 
+                              align = "center", 
+                              style = function(value) {
+                                if(is.na(value)) {
+                                  color <- orange_pal(value)
+                                } else if (value > 0) {
+                                  norm <- (value - min(data$sg_t2g[data$sg_t2g > 0], na.rm = TRUE)) / 
+                                    (max(data$sg_t2g[data$sg_t2g > 0], na.rm = TRUE) - min(data$sg_t2g[data$sg_t2g > 0], na.rm = TRUE))
+                                  color <- orange_pal(norm)
+                                } else {
+                                  norm <- (value - min(data$sg_t2g[data$sg_t2g < 0], na.rm = TRUE)) / 
+                                    (max(data$sg_t2g[data$sg_t2g < 0], na.rm = TRUE) - min(data$sg_t2g[data$sg_t2g < 0], na.rm = TRUE))
+                                  color <- blue_pal(norm)
+                                }
+                                list(background = color, 
+                                     borderLeft = "2px solid rgba(0, 0, 0, 1)",
+                                     align = "center")}),
+              # SG PUTT 
+              sg_putt = colDef(name = "SG: PUTT",
+                               aggregate = "sum", 
+                               align = "center", 
+                               style = function(value) {
+                                 if(is.na(value)) {
+                                   color <- orange_pal(value)
+                                 } else if (value > 0) {
+                                   norm <- (value - min(data$sg_putt[data$sg_putt > 0], na.rm = TRUE)) / 
+                                     (max(data$sg_putt[data$sg_putt > 0], na.rm = TRUE) - min(data$sg_putt[data$sg_putt > 0], na.rm = TRUE))
+                                   color <- orange_pal(norm)
+                                 } else {
+                                   norm <- (value - min(data$sg_putt[data$sg_putt < 0], na.rm = TRUE)) / 
+                                     (max(data$sg_putt[data$sg_putt < 0], na.rm = TRUE) - min(data$sg_putt[data$sg_putt < 0], na.rm = TRUE))
+                                   color <- blue_pal(norm)
+                                 }
+                                 list(background = color, 
+                                      borderLeft = "2px solid rgba(0, 0, 0, 1)",
+                                      align = "center")}),
+              #sg_total = colDef(aggregate = "sum", align = "center", style = list(borderLeft = "1px solid rgba(0, 0, 0, 1)")),
+              fin_text = colDef(name = "POS", maxWidth = 75, defaultSortOrder = "asc", sortNALast = TRUE, aggregate = "unique", align = "center"),
+              round_num = colDef(name = "Round Number", aggregate = "max", align = "center"),
+              salary = colDef(name = "DK Salary", align = "center")
+              ),
+            columnGroups = list(
+              colGroup(headerStyle = list(`border-bottom` = "thin", 
+                                          fontFamily = "Josefin Sans, sans-serif", 
+                                          fontSize = "16px"),
+                       align = "center", name = "Strokes Gained Data",
+                       columns = c("sg_ott", "sg_app","sg_arg","sg_t2g", "sg_putt","sg_total"))
+              ),
+            # rowStyle = JS("function(rowInfo, state) {
+            #               // Ignore padding rows
+            #               if (!rowInfo) return
+            #               
+            #               // Add horizontal separators between groups when sorting by course
+            #               const firstSorted = state.sorted[0]
+            #               if (firstSorted && firstSorted.id === 'Course') {
+            #               const nextRow = state.pageRows[rowInfo.viewIndex + 1]
+            #               if (nextRow && rowInfo.row['Course'] !== nextRow['Course']) {
+            #               // Use box-shadow to add a 2px border without taking extra space
+            #               return { boxShadow: 'inset 0 -2px 0 rgba(0, 0, 0, 0.1)' }
+            #               }
+            #               }
+            #               }
+            #               "),
+            highlight = TRUE,
+            pagination = FALSE, 
+            searchable = TRUE)
+```
+

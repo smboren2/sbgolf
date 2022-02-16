@@ -1,0 +1,13 @@
+# Font style metadata
+name = "my_font"
+
+# Optional Google font URL
+# google_fonts = "family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700"
+#google_fonts = "family=Ropa+Sans"
+google_fonts ="family=Baloo+Paaji+2&"
+
+# Font families
+heading_font = "Baloo Paaji 2"
+body_font = "Baloo Paaji 2"
+nav_font = "Baloo Paaji 2"
+mono_font = "Baloo Paaji 2"
