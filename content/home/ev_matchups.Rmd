@@ -134,6 +134,11 @@ reactable(df, #fullWidth = FALSE,
           #     colGroup(name = "Golfer 2", columns = c("p2_ev","p2_player_image","p2_player_name","draftkings_p2")))
           )
 
+
+htmltools::tags$link(
+  href = "https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap", 
+  rel = "stylesheet")
+
 ```
 
 </div>
@@ -205,7 +210,11 @@ reactable(bet_df, class = "table",
             }
           }
           )
-  
+
+htmltools::tags$link(
+  href = "https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap", 
+  rel = "stylesheet")
+
 ```
 </div>
 
