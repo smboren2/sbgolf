@@ -9,7 +9,7 @@ weight: 2
 <center> <h2> Round 1 Matchups</h2> </center>
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE,results='hide'}
-df <- readr::read_csv("../../static/data/genesis_r1.csv")
+df <- readr::read_csv("../../static/data/h2h_round_matchups.csv")
 df <- dplyr::filter(df, p1_ev > 0.05 | p2_ev > 0.05)
 ```
 
