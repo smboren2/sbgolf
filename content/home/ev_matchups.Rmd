@@ -52,17 +52,17 @@ reactable(df, #fullWidth = FALSE,
           defaultColDef = colDef(headerStyle = list(`border-bottom` = "solid", 
                                                     fontFamily = "Josefin Sans, sans-serif",
                                                     fontSize = "18px")),
-          style = list(fontFamily = "Josefin Sans, sans-serif", fontSize = "16px", maxWidth = 760),
+          style = list(fontFamily = "Josefin Sans, sans-serif", fontSize = "16px"),#, maxWidth = 760),
           columns = 
             list(
-              p1_player_image = colDef(cell = embed_img(height = 40, width = 40), maxWidth = 60,
+              p1_player_image = colDef(cell = embed_img(height = 40, width = 40), #maxWidth = 60,
                                       align = "right", name = ""),
-              p2_player_image = colDef(cell = embed_img(height = 40, width = 40), maxWidth = 60,
+              p2_player_image = colDef(cell = embed_img(height = 40, width = 40), #maxWidth = 60,
                                        align = "right", name = ""),
               p1_ev = colDef(format = colFormat(percent = TRUE, digits = 1),
                 name = "EV",
                 align = "center",
-                maxWidth = 75,
+                #maxWidth = 75,
                 style = function(value) {
                   if(is.na(value)) {
                     color <- orange_pal(value)
@@ -79,7 +79,7 @@ reactable(df, #fullWidth = FALSE,
               p2_ev = colDef(format = colFormat(percent = TRUE, digits = 1),
                 name = "EV",
                 align = "center",
-                maxWidth = 75,
+                #maxWidth = 75,
                 style = function(value) {
                   if(is.na(value)) {
                     color <- orange_pal(value)
@@ -93,7 +93,7 @@ reactable(df, #fullWidth = FALSE,
                   
                   list(background = color)}),
               
-              p1_player_name = colDef(name = "", align = "left", html = TRUE, maxWidth = 140,
+              p1_player_name = colDef(name = "", align = "left", html = TRUE, #maxWidth = 140,
                                       cell = function(x) {
                                         last_name <- word(x, 2, -1)
                                         first_name <- word(x, 1)
@@ -105,11 +105,14 @@ reactable(df, #fullWidth = FALSE,
                                          <div style='line-height:12px'><span style ='color:black;font-size:12px'>{first_name}</span></div>")
                                         
                                       }),
-              draftkings_p1 = colDef("", align = "center", maxWidth = 50),
-              smb_us = colDef(name = "Model Fair", align = "center", maxWidth = 110,
+              draftkings_p1 = colDef("", align = "center", #maxWidth = 50,
+                                     cell = function(value) {
+                                       if (value >= 0) paste0("+", value) else value
+                                       }),
+              smb_us = colDef(name = "Model Fair", align = "center", #maxWidth = 110,
                                   style = list(borderLeft = "2px solid rgba(0, 0, 0, 1)",
                                                borderRight = "2px solid rgba(0, 0, 0, 1)")),
-              p2_player_name = colDef(name = "", align = "right", html = TRUE, maxWidth = 140,
+              p2_player_name = colDef(name = "", align = "right", html = TRUE, #maxWidth = 140,
                                       cell = function(x) {
                                         last_name <- word(x, 2, -1)
                                         first_name <- word(x, 1)
@@ -121,7 +124,10 @@ reactable(df, #fullWidth = FALSE,
                                           <div style='line-height:12px'><span style ='color:black;font-size:14px'>{first_name}</span></div>")
                                         
                                       }),
-              draftkings_p2 = colDef("", align = "center", maxWidth = 50))
+              draftkings_p2 = colDef("", align = "center",# maxWidth = 50,
+                                     cell = function(value) {
+                                       if (value >= 0) paste0("+", value) else value
+                                       }))
           # title 
           #columnGroups = 
           # list(colGroup(name = "Golfer 1", columns = c("p1_ev","p1_player_image","p1_player_name","draftkings_p1")),
@@ -131,7 +137,6 @@ reactable(df, #fullWidth = FALSE,
 ```
 
 </div>
-
 
 
 
@@ -148,7 +153,7 @@ Based on our model and using an optimal betting strategy, the information below 
 profit and loss. It is separated out based on tournaments. 
 
 ```{r, warning=FALSE, message=FALSE, echo = FALSE}
-reactable(bet_df,
+reactable(bet_df, class = "table",
           pagination = FALSE, highlight = TRUE, striped = TRUE, 
           theme = reactableTheme(cellStyle = list(display = "flex", flexDirection = "column", justifyContent = "center")),
           groupBy = "event_name",
