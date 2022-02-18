@@ -120,8 +120,8 @@ reactable(df, #fullWidth = FALSE,
                                         #htmltools::div(htmltools::div(style = 'line-height:10px', span(style = 'font-weight:bold;font-variant:small-caps;font-size:18px'), last_name),
                                         #htmltools::div(style = 'line-height:12px', span(style = 'color:black;font-size:12px'), first_name))
                                         glue::glue(
-                                          "<div style='line-height:12px'><span style='font-weight:bold;font-variant:small-caps;font-size:20px'>{last_name}</div>
-                                          <div style='line-height:12px'><span style ='color:black;font-size:14px'>{first_name}</span></div>")
+                                          "<div style='line-height:12px'><span style='font-weight:bold;font-variant:small-caps;font-size:18px'>{last_name}</div>
+                                          <div style='line-height:12px'><span style ='color:black;font-size:12px'>{first_name}</span></div>")
                                         
                                       }),
               draftkings_p2 = colDef("", align = "center",# maxWidth = 50,
