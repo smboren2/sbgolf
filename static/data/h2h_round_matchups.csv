@@ -1,20 +1,20 @@
-p1_ev,p1_player_image,p1_player_name,draftkings_p1,smb_us,draftkings_p2,p2_player_name,p2_player_image,p2_ev
-0.169,https://dkn.gs/sports/images/golf/players/160/991.png,Rickie Fowler,155,118/-118,-180,Jordan Spieth,https://dkn.gs/sports/images/golf/players/160/882.png,-0.158
-0.078,https://dkn.gs/sports/images/countries/160/united_states.png,Maverick McNealy,105,-111/111,-125,Bubba Watson,https://dkn.gs/sports/images/golf/players/160/637.png,-0.147
-0.063,https://dkn.gs/sports/images/golf/players/160/929.png,Patrick Cantlay,-170,-202/202,150,Brooks Koepka,https://dkn.gs/sports/images/golf/players/160/1014.png,-0.173
--0.117,https://dkn.gs/sports/images/golf/players/160/555.png,Marc Leishman,-120,108/-108,100,Kevin Na,https://dkn.gs/sports/images/golf/players/160/559.png,0.037
--0.124,https://dkn.gs/sports/images/golf/players/160/946.png,Max Homa,115,146/-146,-135,Viktor Hovland,https://dkn.gs/sports/images/golf/players/160/669.png,0.032
-0.029,https://dkn.gs/sports/images/golf/players/160/518.png,Keegan Bradley,100,-106/106,-120,Adam Hadwin,https://dkn.gs/sports/images/golf/players/160/1187.png,-0.11
-0.028,https://dkn.gs/sports/images/golf/players/160/621.png,Sungjae Im,-125,-133/133,105,Luke List,https://dkn.gs/sports/images/golf/players/160/719.png,-0.121
-0.027,https://dkn.gs/sports/images/golf/players/160/635.png,Mackenzie Hughes,-115,-122/122,-105,Si Woo Kim,https://dkn.gs/sports/images/golf/players/160/870.png,-0.121
--0.104,https://dkn.gs/sports/images/golf/players/160/768.png,Abraham Ancer,-115,109/-109,-105,Corey Conners,https://dkn.gs/sports/images/golf/players/160/1038.png,0.017
--0.002,https://dkn.gs/sports/images/golf/players/160/720.png,Dustin Johnson,-135,-134/134,115,Adam Scott,https://dkn.gs/sports/images/golf/players/160/875.png,-0.083
--0.083,https://dkn.gs/sports/images/golf/players/160/1130.png,Hideki Matsuyama,-115,104/-104,-105,Rory McIlroy,https://dkn.gs/sports/images/golf/players/160/1080.png,-0.006
--0.008,https://dkn.gs/sports/images/golf/players/160/532.png,Cameron Smith,105,107/-107,-125,Justin Thomas,https://dkn.gs/sports/images/golf/players/160/1012.png,-0.071
--0.059,https://dkn.gs/sports/images/golf/players/160/527.png,Talor Gooch,-135,-118/118,115,Alex Noren,https://dkn.gs/sports/images/golf/players/160/1162.png,-0.013
--0.066,https://dkn.gs/sports/images/golf/players/160/808.png,Tony Finau,-105,109/-109,-115,Sergio Garcia,https://dkn.gs/sports/images/golf/players/160/981.png,-0.025
--0.03,https://dkn.gs/sports/images/golf/players/160/1173.png,Jon Rahm,-155,-144/144,135,Scottie Scheffler,https://dkn.gs/sports/images/golf/players/160/607.png,-0.036
--0.048,https://dkn.gs/sports/images/golf/players/160/628.png,Russell Henley,-125,-112/112,105,Cameron Tringale,https://dkn.gs/sports/images/golf/players/160/622.png,-0.034
--0.037,https://dkn.gs/sports/images/golf/players/160/582.png,Sam Burns,-125,-115/115,105,Jason Kokrak,https://dkn.gs/sports/images/golf/players/160/589.png,-0.047
--0.043,https://dkn.gs/sports/images/golf/players/160/1039.png,Paul Casey,-125,-114/114,105,Patrick Reed,https://dkn.gs/sports/images/golf/players/160/976.png,-0.04
--0.04,https://dkn.gs/sports/images/golf/players/160/789.png,Collin Morikawa,-105,103/-103,-115,Xander Schauffele,https://dkn.gs/sports/images/golf/players/160/722.png,-0.05
+p1_ev,p1_player_image,p1_player_name,draftkings_p1,smb_us,draftkings_p2,p2_player_image,p2_player_name,p2_ev
+0.107,https://dkn.gs/sports/images/golf/players/160/991.png,Rickie Fowler,155,130/-130,-180,https://dkn.gs/sports/images/golf/players/160/882.png,Jordan Spieth,-0.12
+-0.108,https://dkn.gs/sports/images/golf/players/160/1039.png,Paul Casey,-165,-125/125,145,https://dkn.gs/sports/images/golf/players/160/976.png,Patrick Reed,0.089
+0.058,https://dkn.gs/sports/images/countries/160/united_states.png,Maverick McNealy,100,-112/112,-120,https://dkn.gs/sports/images/golf/players/160/637.png,Bubba Watson,-0.137
+-0.15,https://dkn.gs/sports/images/golf/players/160/946.png,Max Homa,105,141/-141,-125,https://dkn.gs/sports/images/golf/players/160/669.png,Viktor Hovland,0.054
+-0.127,https://dkn.gs/sports/images/golf/players/160/555.png,Marc Leishman,-120,110/-110,100,https://dkn.gs/sports/images/golf/players/160/559.png,Kevin Na,0.048
+0.045,https://dkn.gs/sports/images/golf/players/160/621.png,Sungjae Im,-125,-138/138,105,https://dkn.gs/sports/images/golf/players/160/719.png,Luke List,-0.14
+0.035,https://dkn.gs/sports/images/golf/players/160/518.png,Keegan Bradley,-105,-113/113,-115,https://dkn.gs/sports/images/golf/players/160/1187.png,Adam Hadwin,-0.122
+0.024,https://dkn.gs/sports/images/golf/players/160/720.png,Dustin Johnson,-125,-132/132,105,https://dkn.gs/sports/images/golf/players/160/875.png,Adam Scott,-0.117
+0.024,https://dkn.gs/sports/images/golf/players/160/635.png,Mackenzie Hughes,-110,-116/116,-110,https://dkn.gs/sports/images/golf/players/160/870.png,Si Woo Kim,-0.115
+-0.104,https://dkn.gs/sports/images/golf/players/160/768.png,Abraham Ancer,-120,105/-105,100,https://dkn.gs/sports/images/golf/players/160/1038.png,Corey Conners,0.022
+-0.001,https://dkn.gs/sports/images/golf/players/160/929.png,Patrick Cantlay,-180,-180/180,155,https://dkn.gs/sports/images/golf/players/160/1014.png,Brooks Koepka,-0.088
+-0.088,https://dkn.gs/sports/images/golf/players/160/1130.png,Hideki Matsuyama,-110,109/-109,-110,https://dkn.gs/sports/images/golf/players/160/1080.png,Rory McIlroy,-0.003
+-0.008,https://dkn.gs/sports/images/golf/players/160/1173.png,Jon Rahm,-145,-142/142,125,https://dkn.gs/sports/images/golf/players/160/607.png,Scottie Scheffler,-0.071
+-0.011,https://dkn.gs/sports/images/golf/players/160/527.png,Talor Gooch,-115,-112/112,-105,https://dkn.gs/sports/images/golf/players/160/1162.png,Alex Noren,-0.08
+-0.015,https://dkn.gs/sports/images/golf/players/160/628.png,Russell Henley,-115,-111/111,-105,https://dkn.gs/sports/images/golf/players/160/622.png,Cameron Tringale,-0.076
+-0.021,https://dkn.gs/sports/images/golf/players/160/532.png,Cameron Smith,100,104/-104,-120,https://dkn.gs/sports/images/golf/players/160/1012.png,Justin Thomas,-0.064
+-0.028,https://dkn.gs/sports/images/golf/players/160/582.png,Sam Burns,-120,-113/113,100,https://dkn.gs/sports/images/golf/players/160/589.png,Jason Kokrak,-0.06
+-0.061,https://dkn.gs/sports/images/golf/players/160/808.png,Tony Finau,-110,103/-103,-110,https://dkn.gs/sports/images/golf/players/160/981.png,Sergio Garcia,-0.029
+-0.045,https://dkn.gs/sports/images/golf/players/160/789.png,Collin Morikawa,-110,-100/100,-110,https://dkn.gs/sports/images/golf/players/160/722.png,Xander Schauffele,-0.046
