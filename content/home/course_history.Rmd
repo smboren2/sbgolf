@@ -1,0 +1,136 @@
+---
+title: ""
+output: html_document
+design: 
+  columns: "1"
+weight: 5
+---
+
+<center> <h2> Course History</h2> </center>
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE,results='hide'}
+library(readr)
+course_hist <- readr::read_csv("../../static/data/course_history.csv")
+```
+
+
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE,results='hide'}
+library(reactable)
+library(reactablefmtr)
+library(htmltools)
+library(stringr)
+
+orange_pal <- function(x) {
+  if (!is.na(x)) {
+    #rgb(colorRamp(RColorBrewer::brewer.pal(9, name = "Oranges"))(x), maxColorValue = 255)
+    rgb(colorRamp(c("#E8F2E4", "#51A341"))(x), maxColorValue = 255)
+  } else {
+    "#ffffff" #white
+  }
+}
+
+blue_pal <- function(x) {
+  if (!is.na(x)) {
+    #rgb(colorRamp(RColorBrewer::brewer.pal(9, name = "Blues"))(x), maxColorValue = 255)
+    rgb(colorRamp(c("#E15135", "#FFE7E1"))(x), maxColorValue = 255)
+  } else {
+    "#ffffff"
+  }
+}
+
+
+```
+
+<div align="center">
+
+```{r, warning=FALSE, message=FALSE, echo = FALSE}
+reactable::reactable(
+  course_hist, 
+  theme = reactableTheme(cellStyle = list(display = "flex", flexDirection = "column", justifyContent = "center")),
+  #compact = TRUE, 
+  pagination = FALSE, highlight = TRUE, #outlined = TRUE,
+  defaultColDef = colDef(headerStyle = list(`border-bottom` = "solid", 
+                                            fontFamily = "Josefin Sans, sans-serif",
+                                            fontSize = "10px",
+                                            vAlign = "center", headerVAlign = "bottom")),
+  style = list(fontFamily = "Josefin Sans, sans-serif", fontSize = "8px", maxWidth = 500),
+  columns = 
+    list(
+      playerImage160 = colDef(cell = embed_img(), minWidth = 40,
+                              align = "right", name = ""),
+      dg_id = colDef(show = FALSE),
+      player_name = colDef(name = "Player"),
+      #sg_total = colDef(name = "Total SG", align = "center", minWidth = 65),
+      rounds = colDef(name = "Total Rounds", align = "center", minWidth = 55),
+      sg_mean = colDef(name = "Avg SG", align = "center", minWidth = 55),
+      `2017` = colDef(name = "2017", align = "center", minWidth = 50,
+                      style = function(value) {
+                        if(is.na(value)) {
+                          color <- "#ffffff"
+                        } else if (value %in% c("CUT","MDF")) {
+                          color <- "#FCBBA1"
+                          } else {
+                          color <- "#C7E9C0"
+                        }
+                        
+                        list(background = color, 
+                             borderLeft = "2px solid rgba(0, 0, 0, 1)",
+                             align = "center")}),
+      `2018` = colDef(name = "2018", align = "center", minWidth = 50,
+                      style = function(value) {
+                        if(is.na(value)) {
+                          color <- "#ffffff"
+                        } else if (value %in% c("CUT","MDF")) {
+                          color <- "#FCBBA1"
+                        } else {
+                          color <- "#C7E9C0"
+                        }
+                        
+                        list(background = color, 
+                             align = "center")}),
+      `2019` = colDef(name = "2019", align = "center", minWidth = 50,
+                      style = function(value) {
+                        if(is.na(value)) {
+                          color <- "#ffffff"
+                        } else if (value %in% c("CUT","MDF")) {
+                          color <- "#FCBBA1"
+                        } else {
+                          color <- "#C7E9C0"
+                        }
+                        
+                        list(background = color, 
+                             align = "center")}),
+      `2020` = colDef(name = "2020", align = "center", minWidth = 50, 
+                      style = function(value) {
+                        if(is.na(value)) {
+                          color <- "#ffffff"
+                        } else if (value %in% c("CUT","MDF")) {
+                          color <- "#FCBBA1"
+                        } else {
+                          color <- "#C7E9C0"
+                        }
+                        
+                        list(background = color, 
+                             align = "center")}),
+      `2021` = colDef(name = "2021", align = "center", minWidth = 50,
+                      style = function(value) {
+                        if(is.na(value)) {
+                          color <- "#ffffff"
+                        } else if (value %in% c("CUT","MDF")) {
+                          color <- "#FCBBA1"
+                        } else {
+                          color <- "#C7E9C0"
+                        }
+                        
+                        list(background = color, 
+                             align = "center")})))
+
+
+htmltools::tags$link(
+  href = "https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap", 
+  rel = "stylesheet")
+
+```
+
+</div>
