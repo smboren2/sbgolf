@@ -9,7 +9,6 @@ weight: 5
 <center> <h2> Course History</h2> </center>
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE,results='hide'}
-library(readr)
 course_hist <- readr::read_csv("../../static/data/course_history.csv")
 ```
 
