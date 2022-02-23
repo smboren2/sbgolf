@@ -74,7 +74,7 @@ reactable::reactable(
                         }
                         
                         list(background = color, 
-                             borderLeft = "2px solid rgba(0, 0, 0, 1)",
+                             borderLeft = "1px solid rgba(0, 0, 0, 1)",
                              align = "center")}),
       `2018` = colDef(name = "2018", align = "center", minWidth = 50,
                       style = function(value) {
