@@ -1,95 +1,112 @@
 event_name,bet_type,pick,pick_ev,opponent,opponent_ev,risk_amount,win_amount,outcome,bet_result
-Sentry Tournament of Champions,R1 Match-Up,"Thomas, Justin (-154)",0.10606099999999996,"Spieth, Jordan (135)",-0.22529900000000003,27,18,loss,-27
-Sentry Tournament of Champions,R1 Match-Up,"Berger, Daniel (-196)",0.06261720000000004,"Kisner, Kevin (165)",-0.2148580000000001,16,8,win,8
-Sentry Tournament of Champions,R2 Match-Up,"Glover, Lucas (150)",0.10967499999999997,"English, Harris (-169)",-0.11575329999999995,27,40,win,40
-Sentry Tournament of Champions,R2 Match-Up,"Dahmen, Joel (115)",0.08684650000000005,"Koepka, Brooks (-135)",-0.13958740000000003,21,24,loss,-21
-Sentry Tournament of Champions,R2 Match-Up,"Davis, Cameron (-100)",0.10850000000000004,"Cink, Stewart (-120)",-0.18427749999999998,27,27,loss,-27
-Sentry Tournament of Champions,R2 Match-Up,"Reed, Patrick (165)",0.05724399999999985,"Thomas, Justin (-196)",-0.0924296,14,23,win,23
-Sentry Tournament of Champions,R3 Match-Up,"Thomas, Justin (-154)",0.10648999999999997,"Spieth, Jordan (135)",-0.22590999999999994,27,18,win,18
-Sentry Tournament of Champions,R3 Match-Up,"Smith, Cameron (145)",0.09872700000000023,"Rahm, Jon (-164)",-0.11202060000000003,25,36,loss,-25
-Sentry Tournament of Champions,R4 Match-Up,"Finau, Tony (-125)",0.05784200000000017,"Koepka, Brooks (105)",-0.1547645000000002,14,11,win,11
-Sentry Tournament of Champions,R4 Match-Up,"Mickelson, Phil (155)",0.09836149999999999,"English, Harris (-179)",-0.1119388,24,37,loss,-24
-Sentry Tournament of Champions,R4 Match-Up,"Van Rooyen, Erik (135)",0.29496750000000005,"Spieth, Jordan (-154)",-0.2592325,73,99,loss,-73
-Sentry Tournament of Champions,R4 Match-Up,"Kisner, Kevin (-100)",0.05015999999999998,"Cink, Stewart (-120)",-0.1308963999999999,12,12,win,12
-Sony Open in Hawaii,R1 Match-Up,"Kuchar, Matt (-115)",0.05881270000000005,"Cink, Stewart (-105)",-0.1541095,13,11,win,11
-Sony Open in Hawaii,R2 Match-Up,"Im, Sungjae (-110)",0.05380430000000014,"Leishman, Marc (-110)",-0.1438043,12,11,win,11
-Sony Open in Hawaii,R3 Match-Up,"Walker, Jimmy (190)",0.07476899999999986,"Leishman, Marc (-233)",-0.09997230000000001,18,34,loss,-18
-Sony Open in Hawaii,R3 Match-Up,"Palmer, Ryan (-100)",0.0750599999999999,"Kisner, Kevin (-120)",-0.15367989999999987,18,18,loss,-18
-Sony Open in Hawaii,R3 Match-Up,"Kokrak, Jason (-105)",0.059415500000000065,"Howell III, Charles (-115)",-0.14595229999999992,14,13,win,13
-Sony Open in Hawaii,R4 Match-Up,"Taylor, Vaughn (150)",0.06462499999999993,"Lee, Kyounghoon (-169)",-0.08710150000000005,15,22,win,22
-Sony Open in Hawaii,R4 Match-Up,"Henley, Russell (125)",0.09365749999999995,"Matsuyama, Hideki (-145)",-0.13145830000000003,21,26,loss,-21
-Sony Open in Hawaii,R4 Match-Up,"Whaley, Vincent (145)",0.10869850000000003,"English, Harris (-164)",-0.11857329999999988,25,36,win,36
-Sony Open in Hawaii,R4 Match-Up,"Armour, Ryan (130)",0.12148000000000003,"Cink, Stewart (-149)",-0.1442920000000001,28,36,win,36
-The American Express,R1 Match-Up,"Woodland, Gary (125)",0.11210750000000003,"Wolff, Matthew (-145)",-0.14531629999999995,28,35,win,35
-The American Express,R1 Match-Up,"Griffin, Lanto (155)",0.08925799999999984,"Conners, Corey (-179)",-0.10636959999999995,22,34,win,34
-The American Express,R1 Match-Up,"Duncan, Tyler (135)",0.057711499999999916,"Lee, Kyounghoon (-154)",-0.09264850000000002,14,19,loss,-14
-The American Express,R1 Match-Up,"Day, Jason (125)",0.12529250000000003,"Rose, Justin (-145)",-0.15521970000000007,31,39,win,39
-The American Express,R1 Match-Up,"Villegas, Camilo (120)",0.06376600000000021,"Harman, Brian (-141)",-0.1168363,16,19,loss,-16
-The American Express,R2 Match-Up,"Mickelson, Phil (135)",0.05592550000000007,"Fowler, Rickie (-154)",-0.09139450000000005,15,20,loss,-15
-The American Express,R2 Match-Up,"Varner III, Harold (105)",0.3717984999999999,"Zalatoris, Will (-125)",-0.40450600000000003,99,104,loss,-99
-The American Express,R2 Match-Up,"Cantlay, Patrick (-141)",0.07940329999999984,"Scheffler, Scottie (120)",-0.18870599999999982,21,15,win,15
-The American Express,R2 Match-Up,"Villegas, Camilo (145)",0.14490950000000002,"Harman, Brian (-164)",-0.14236909999999992,39,57,win,57
-The American Express,R2 Match-Up,"Day, Jason (120)",0.09698600000000002,"Rose, Justin (-141)",-0.1426573000000001,26,31,loss,-26
-The American Express,R2 Match-Up,"Duncan, Tyler (145)",0.09946200000000016,"Lee, Kyounghoon (-164)",-0.11250360000000004,26,38,win,38
-The American Express,R3 Match-Up,"Varner III, Harold (-100)",0.23947999999999992,"Zalatoris, Will (-120)",-0.30412419999999984,62,62,win,62
-The American Express,R3 Match-Up,"Mickelson, Phil (140)",0.08146399999999998,"Fowler, Rickie (-161)",-0.10998819999999987,21,29,win,29
-The American Express,R3 Match-Up,"Duncan, Tyler (135)",0.061847500000000055,"Lee, Kyounghoon (-154)",-0.09555250000000004,16,22,loss,-16
-The American Express,R3 Match-Up,"Villegas, Camilo (140)",0.11839999999999984,"Harman, Brian (-161)",-0.13491999999999993,31,43,loss,-31
-The American Express,R4 Match-Up,"Henley, Russell (-110)",0.06346889999999994,"Bezuidenhout, Christiaan (-110)",-0.15346890000000002,17,15,win,15
-The American Express,R4 Match-Up,"Varner III, Harold (-100)",0.22560000000000002,"Zalatoris, Will (-120)",-0.291424,61,61,loss,-61
-The American Express,R4 Match-Up,"Hoge, Tom (-135)",0.09423380000000003,"Hodges, Lee (115)",-0.20207050000000015,25,18,win,18
-Farmers Insurance Open,R1 Match-Up,"Day, Jason (145)",0.05389200000000005,"Matsuyama, Hideki (-164)",-0.0825575999999999,14,20,win,20
-Farmers Insurance Open,R1 Match-Up,"Tringale, Cameron (105)",0.2131695,"Zalatoris, Will (-125)",-0.26522200000000007,56,59,win,59
-Farmers Insurance Open,R1 Match-Up,"Reed, Patrick (115)",0.10492799999999991,"Leishman, Marc (-135)",-0.15422079999999994,28,32,loss,-28
-Farmers Insurance Open,R1 Match-Up,"Berger, Daniel (-145)",0.11349030000000004,"Koepka, Brooks (125)",-0.23245749999999998,30,21,win,21
-Farmers Insurance Open,R2 Match-Up,"Tringale, Cameron (105)",0.20218150000000001,"Zalatoris, Will (-125)",-0.25557399999999997,57,60,win,60
-Farmers Insurance Open,R2 Match-Up,"Reed, Patrick (110)",0.09013099999999996,"Leishman, Marc (-130)",-0.14882470000000003,25,28,win,28
-Farmers Insurance Open,R2 Match-Up,"Bezuidenhout, Christiaan (105)",0.053371999999999975,"Homa, Max (-125)",-0.12491200000000002,15,16,win,16
-Farmers Insurance Open,R2 Match-Up,"DeChambeau, Bryson (-141)",0.09829880000000002,"Spieth, Jordan (120)",-0.21301599999999998,28,20,win,20
-Farmers Insurance Open,R2 Match-Up,"Berger, Daniel (-145)",0.12074039999999986,"Koepka, Brooks (125)",-0.24211000000000005,34,23,win,23
-Farmers Insurance Open,R3 Match-Up,"Johnson, Dustin (-120)",0.16933339999999997,"Zalatoris, Will (-100)",-0.27796,54,45,loss,-54
-Farmers Insurance Open,R3 Match-Up,"Reed, Patrick (115)",0.1374789999999999,"Leishman, Marc (-135)",-0.18056439999999996,44,51,loss,-44
-Farmers Insurance Open,R4 Match-Up,"Day, Jason (115)",0.16213949999999988,"Zalatoris, Will (-135)",-0.20052219999999987,48,55,loss,-48
-Farmers Insurance Open,R4 Match-Up,"McNealy, Maverick (105)",0.06911599999999996,"Leishman, Marc (-125)",-0.13873599999999997,20,21,loss,-20
-Farmers Insurance Open,R4 Match-Up,"Tringale, Cameron (-105)",0.07074499999999984,"Palmer, Ryan (-115)",-0.15681699999999987,21,20,win,20
-AT&T Pebble Beach Pro-Am,R1 Match-Up,"Palmer, Ryan (110)",0.19483699999999993,"Spieth, Jordan (-130)",-0.23707689999999992,55,61,loss,-55
-AT&T Pebble Beach Pro-Am,R1 Match-Up,"Todd, Brendon (105)",0.10374050000000001,"Knox, Russell (-125)",-0.16913800000000012,29,30,win,30
-AT&T Pebble Beach Pro-Am,R1 Match-Up,"Aphibarnrat, Kiradech (205)",0.07000099999999998,"McNealy, Maverick (-256)",-0.09763980000000005,20,41,win,41
-AT&T Pebble Beach Pro-Am,R1 Match-Up,"Dahmen, Joel (-135)",0.07213580000000008,"Walker, Jimmy (115)",-0.17476550000000002,20,15,loss,-20
-AT&T Pebble Beach Pro-Am,R1 Match-Up,"Garnett, Brice (115)",0.06205699999999981,"Cink, Stewart (-135)",-0.1195252,17,20,win,20
-AT&T Pebble Beach Pro-Am,R2 Match-Up,"Hagy, Brandon (150)",0.052649999999999864,"Sigg, Greyson (-169)",-0.07948539999999993,15,22,win,22
-AT&T Pebble Beach Pro-Am,R2 Match-Up,"Palmer, Ryan (120)",0.2047420000000002,"Spieth, Jordan (-141)",-0.22641310000000003,58,70,loss,-58
-AT&T Pebble Beach Pro-Am,R2 Match-Up,"Dahmen, Joel (-130)",0.09147049999999979,"Walker, Jimmy (110)",-0.19496499999999994,26,20,win,20
-AT&T Pebble Beach Pro-Am,R3 Match-Up,"Perez, Pat (-169)",0.0932999000000001,"Watney, Nick (150)",-0.21902500000000014,26,15,win,15
-AT&T Pebble Beach Pro-Am,R3 Match-Up,"Taylor, Nick (145)",0.06415750000000009,"Day, Jason (-164)",-0.08930349999999998,18,26,win,26
-AT&T Pebble Beach Pro-Am,R4 Match-Up,"Dahmen, Joel (145)",0.2758864999999999,"Spieth, Jordan (-164)",-0.2284396999999999,80,116,loss,-80
-AT&T Pebble Beach Pro-Am,R4 Match-Up,"Hoge, Tom (190)",0.059050999999999965,"Cantlay, Patrick (-233)",-0.09222170000000007,17,32,win,32
-AT&T Pebble Beach Pro-Am,R4 Match-Up,"Power, Seamus (-105)",0.0881194999999999,"Day, Jason (-115)",-0.17347869999999999,26,25,win,25
-WM Phoenix Open,R1 Match-Up,"Kirk, Chris (105)",0.09498699999999971,"Knox, Russell (-125)",-0.16145199999999993,27,28,win,28
-WM Phoenix Open,R1 Match-Up,"Schauffele, Xander (-115)",0.0946606000000001,"Spieth, Jordan (-105)",-0.19149100000000008,27,23,win,23
-WM Phoenix Open,R1 Match-Up,"Fitzpatrick, Matthew (145)",0.17367250000000012,"Matsuyama, Hideki (-164)",-0.16127049999999987,50,73,loss,-50
-WM Phoenix Open,R2 Match-Up,"McCarthy, Denny (-110)",0.09395249999999988,"Pereira, Mito (-110)",-0.18395249999999996,27,25,loss,-27
-WM Phoenix Open,R2 Match-Up,"Cantlay, Patrick (-100)",0.1398600000000001,"Thomas, Justin (-120)",-0.2129719,40,40,win,40
-WM Phoenix Open,R2 Match-Up,"Schauffele, Xander (-120)",0.07073299999999993,"Spieth, Jordan (-100)",-0.17020000000000002,20,17,win,17
-WM Phoenix Open,R2 Match-Up,"Ancer, Abraham (105)",0.09789800000000004,"Koepka, Brooks (-125)",-0.16400799999999993,28,29,loss,-28
-WM Phoenix Open,R3 Match-Up,"Cantlay, Patrick (-115)",0.1677963,"Matsuyama, Hideki (-105)",-0.26775550000000004,48,42,loss,-48
-WM Phoenix Open,R3 Match-Up,"Schauffele, Xander (-115)",0.12422529999999998,"Koepka, Brooks (-105)",-0.22232050000000003,36,31,loss,-36
-WM Phoenix Open,R3 Match-Up,"Theegala, Sahith (110)",0.05153300000000005,"Hadwin, Adam (-130)",-0.11629210000000001,15,16,loss,-15
-WM Phoenix Open,R4 Match-Up,"Cantlay, Patrick (-125)",0.05994800000000011,"Schauffele, Xander (105)",-0.15716300000000016,16,13,win,13
-WM Phoenix Open,R4 Match-Up,"Todd, Brendon (105)",0.051813999999999805,"Mitchell, Keith (-125)",-0.12354399999999999,14,15,loss,-14
-WM Phoenix Open,R4 Match-Up,"Theegala, Sahith (115)",0.07461300000000004,"Hadwin, Adam (-135)",-0.1296868000000001,20,23,win,23
-WM Phoenix Open,R4 Match-Up,"Scheffler, Scottie (-110)",0.10180259999999985,"Koepka, Brooks (-110)",-0.19180260000000005,27,25,win,25
-The Genesis Invitational,R1 Match-Up,"Bradley, Keegan (-100)",0.05132000000000003,"Hadwin, Adam (-120)",-0.13195780000000001,14,14,win,14
-The Genesis Invitational,R1 Match-Up,"Fowler, Rickie (155)",0.1682824999999999,"Spieth, Jordan (-179)",-0.15471400000000002,46,71,loss,-46
-The Genesis Invitational,R1 Match-Up,"Cantlay, Patrick (-169)",0.06321710000000014,"Koepka, Brooks (150)",-0.17172500000000002,17,10,win,10
-The Genesis Invitational,R1 Match-Up,"Na, Kevin (-100)",0.052200000000000024,"Leishman, Marc (-120)",-0.13276299999999996,14,14,loss,-14
-The Genesis Invitational,R1 Match-Up,"McNealy, Maverick (105)",0.07893550000000005,"Watson, Bubba (-125)",-0.147358,22,23,win,23
-The Genesis Invitational,R2 Match-Up,"Fowler, Rickie (155)",0.11106049999999978,"Spieth, Jordan (-179)",-0.11970760000000003,30,46,loss,-30
-The Genesis Invitational,R2 Match-Up,"Hovland, Viktor (-125)",0.06052400000000002,"Homa, Max (105)",-0.15781900000000004,16,13,win,13
-The Genesis Invitational,R2 Match-Up,"McNealy, Maverick (-100)",0.05733999999999995,"Watson, Bubba (-120)",-0.13746609999999992,15,15,win,15
-The Genesis Invitational,R3 Match-Up,"Scheffler, Scottie (-115)",0.11169629999999997,"Zalatoris, Will (-105)",-0.20925549999999993,30,26,win,26
-The Genesis Invitational,R3 Match-Up,"Garcia, Sergio (-110)",0.0530212000000001,"Kim, Si Woo (-110)",-0.14302120000000007,14,13,win,13
-The Genesis Invitational,R3 Match-Up,"Rahm, Jon (-120)",0.07792489999999996,"Cantlay, Patrick (-100)",-0.17806,21,17,loss,-21
-The Genesis Invitational,R3 Match-Up,"Niemann, Joaquin (150)",0.05149999999999988,"Thomas, Justin (-169)",-0.07875399999999988,14,21,win,21
-The Genesis Invitational,R4 Match-Up,"Smith, Cameron (-120)",0.12770090000000023,"Zalatoris, Will (-100)",-0.2324600000000001,36,30,win,30
-The Genesis Invitational,R4 Match-Up,"Van Rooyen, Erik (115)",0.06934549999999984,"Spieth, Jordan (-135)",-0.12542379999999997,19,22,loss,-19
+Sentry Tournament of Champions,R1 Match-Up,"Thomas, Justin (-154)",0.1091629999999999,"Spieth, Jordan (135)",-0.22971700000000006,27,18,loss,-27
+Sentry Tournament of Champions,R1 Match-Up,"Berger, Daniel (-196)",0.05941599999999991,"Kisner, Kevin (165)",-0.20923999999999998,15,8,win,8
+Sentry Tournament of Champions,R1 Match-Up,"Lee, Kyounghoon (-120)",0.05365909999999996,"Cink, Stewart (-100)",-0.15154,13,11,loss,-13
+Sentry Tournament of Champions,R2 Match-Up,"Glover, Lucas (150)",0.10660000000000003,"English, Harris (-169)",-0.11379759999999983,26,39,win,39
+Sentry Tournament of Champions,R2 Match-Up,"Dahmen, Joel (115)",0.08665299999999987,"Koepka, Brooks (-135)",-0.13943079999999997,21,24,loss,-21
+Sentry Tournament of Champions,R2 Match-Up,"Davis, Cameron (-100)",0.10943999999999998,"Cink, Stewart (-120)",-0.1851375999999999,26,26,loss,-26
+Sentry Tournament of Champions,R2 Match-Up,"Reed, Patrick (165)",0.05318949999999978,"Thomas, Justin (-196)",-0.0901192999999999,13,21,win,21
+Sentry Tournament of Champions,R3 Match-Up,"Thomas, Justin (-154)",0.1071829999999998,"Spieth, Jordan (135)",-0.2268969999999999,26,17,win,17
+Sentry Tournament of Champions,R3 Match-Up,"Smith, Cameron (145)",0.1073265000000001,"Rahm, Jon (-164)",-0.11767169999999993,26,38,loss,-26
+Sentry Tournament of Champions,R4 Match-Up,"Mickelson, Phil (155)",0.09468949999999987,"English, Harris (-179)",-0.10969239999999991,23,36,loss,-23
+Sentry Tournament of Champions,R4 Match-Up,"Van Rooyen, Erik (135)",0.28967999999999994,"Spieth, Jordan (-154)",-0.2555200000000001,70,94,loss,-70
+Sentry Tournament of Champions,R4 Match-Up,"Kisner, Kevin (-100)",0.053080000000000016,"Cink, Stewart (-120)",-0.13356820000000003,13,13,win,13
+Sony Open in Hawaii,R1 Match-Up,"Kuchar, Matt (-115)",0.052548200000000156,"Cink, Stewart (-105)",-0.14757700000000007,12,10,win,10
+Sony Open in Hawaii,R2 Match-Up,"Im, Sungjae (-110)",0.053174000000000055,"Leishman, Marc (-110)",-0.14317400000000002,12,11,win,11
+Sony Open in Hawaii,R3 Match-Up,"Walker, Jimmy (190)",0.07523299999999988,"Leishman, Marc (-233)",-0.10020110000000015,17,32,loss,-17
+Sony Open in Hawaii,R3 Match-Up,"Palmer, Ryan (-100)",0.07085999999999992,"Kisner, Kevin (-120)",-0.14983689999999994,16,16,loss,-16
+Sony Open in Hawaii,R3 Match-Up,"Kokrak, Jason (-105)",0.05832349999999975,"Howell III, Charles (-115)",-0.1449050999999999,13,12,win,12
+Sony Open in Hawaii,R4 Match-Up,"Taylor, Vaughn (150)",0.06272500000000014,"Lee, Kyounghoon (-169)",-0.08589309999999994,14,21,win,21
+Sony Open in Hawaii,R4 Match-Up,"Henley, Russell (125)",0.08501750000000019,"Matsuyama, Hideki (-145)",-0.12496870000000015,19,24,loss,-19
+Sony Open in Hawaii,R4 Match-Up,"Whaley, Vincent (145)",0.1073265000000001,"English, Harris (-164)",-0.11767169999999993,24,35,win,35
+Sony Open in Hawaii,R4 Match-Up,"Armour, Ryan (130)",0.12759799999999988,"Cink, Stewart (-149)",-0.14873420000000004,28,36,win,36
+The American Express,R1 Match-Up,"Woodland, Gary (125)",0.11264750000000001,"Wolff, Matthew (-145)",-0.14572190000000007,27,34,win,34
+The American Express,R1 Match-Up,"Griffin, Lanto (155)",0.096908,"Conners, Corey (-179)",-0.11104959999999997,23,36,win,36
+The American Express,R1 Match-Up,"Day, Jason (125)",0.1118825000000001,"Rose, Justin (-145)",-0.14514729999999998,27,34,win,34
+The American Express,R1 Match-Up,"Villegas, Camilo (120)",0.06150000000000011,"Harman, Brian (-141)",-0.11507500000000004,15,18,loss,-15
+The American Express,R2 Match-Up,"Mickelson, Phil (135)",0.05606650000000002,"Fowler, Rickie (-154)",-0.0914935,15,20,loss,-15
+The American Express,R2 Match-Up,"Varner III, Harold (105)",0.37015849999999983,"Zalatoris, Will (-125)",-0.40306600000000004,98,103,loss,-98
+The American Express,R2 Match-Up,"Cantlay, Patrick (-141)",0.08154079999999997,"Scheffler, Scottie (120)",-0.19145600000000007,21,15,win,15
+The American Express,R2 Match-Up,"Villegas, Camilo (145)",0.14201850000000027,"Harman, Brian (-164)",-0.14046930000000002,37,54,win,54
+The American Express,R2 Match-Up,"Day, Jason (120)",0.10541200000000006,"Rose, Justin (-141)",-0.14920660000000008,28,34,loss,-28
+The American Express,R2 Match-Up,"Duncan, Tyler (145)",0.10156900000000002,"Lee, Kyounghoon (-164)",-0.1138882,27,39,win,39
+The American Express,R3 Match-Up,"Varner III, Harold (-100)",0.22975999999999996,"Zalatoris, Will (-120)",-0.2952303999999999,59,59,win,59
+The American Express,R3 Match-Up,"Mickelson, Phil (140)",0.0736159999999999,"Fowler, Rickie (-161)",-0.10469080000000008,19,27,win,27
+The American Express,R3 Match-Up,"Duncan, Tyler (135)",0.06140099999999982,"Lee, Kyounghoon (-154)",-0.09523899999999996,16,22,loss,-16
+The American Express,R3 Match-Up,"Villegas, Camilo (140)",0.11012,"Harman, Brian (-161)",-0.12933099999999997,28,39,loss,-28
+The American Express,R4 Match-Up,"Henley, Russell (-110)",0.0657991,"Bezuidenhout, Christiaan (-110)",-0.15579910000000008,17,15,win,15
+The American Express,R4 Match-Up,"Varner III, Harold (-100)",0.22882000000000002,"Zalatoris, Will (-120)",-0.2943703,61,61,loss,-61
+The American Express,R4 Match-Up,"Hoge, Tom (-135)",0.08706499999999995,"Hodges, Lee (115)",-0.19321250000000012,23,17,win,17
+Farmers Insurance Open,R1 Match-Up,"Day, Jason (145)",0.05249550000000025,"Matsuyama, Hideki (-164)",-0.08163989999999999,14,20,win,20
+Farmers Insurance Open,R1 Match-Up,"Tringale, Cameron (105)",0.21353849999999985,"Zalatoris, Will (-125)",-0.26554599999999995,55,58,win,58
+Farmers Insurance Open,R1 Match-Up,"Reed, Patrick (115)",0.11251749999999983,"Leishman, Marc (-135)",-0.16036300000000003,29,33,loss,-29
+Farmers Insurance Open,R1 Match-Up,"Berger, Daniel (-145)",0.11234110000000008,"Koepka, Brooks (125)",-0.23092749999999995,29,20,win,20
+Farmers Insurance Open,R2 Match-Up,"Tringale, Cameron (105)",0.20654799999999973,"Zalatoris, Will (-125)",-0.25940799999999997,57,60,win,60
+Farmers Insurance Open,R2 Match-Up,"Reed, Patrick (110)",0.09500300000000017,"Leishman, Marc (-130)",-0.1529311,26,29,win,29
+Farmers Insurance Open,R2 Match-Up,"Bezuidenhout, Christiaan (105)",0.054458499999999965,"Homa, Max (-125)",-0.12586599999999992,15,16,win,16
+Farmers Insurance Open,R2 Match-Up,"DeChambeau, Bryson (-141)",0.09641780000000022,"Spieth, Jordan (120)",-0.210596,27,19,win,19
+Farmers Insurance Open,R2 Match-Up,"Berger, Daniel (-145)",0.12243039999999983,"Koepka, Brooks (125)",-0.2443599999999999,34,23,win,23
+Farmers Insurance Open,R3 Match-Up,"Johnson, Dustin (-120)",0.1692053,"Zalatoris, Will (-100)",-0.27781999999999996,53,44,loss,-53
+Farmers Insurance Open,R3 Match-Up,"Reed, Patrick (115)",0.13661900000000005,"Leishman, Marc (-135)",-0.17986840000000004,43,49,loss,-43
+Farmers Insurance Open,R4 Match-Up,"Day, Jason (115)",0.15629150000000003,"Zalatoris, Will (-135)",-0.1957894,45,52,loss,-45
+Farmers Insurance Open,R4 Match-Up,"McNealy, Maverick (105)",0.07487649999999979,"Leishman, Marc (-125)",-0.14379399999999998,22,23,loss,-22
+Farmers Insurance Open,R4 Match-Up,"Tringale, Cameron (-105)",0.062496499999999955,"Palmer, Ryan (-115)",-0.14890689999999995,18,17,win,17
+AT&T Pebble Beach Pro-Am,R1 Match-Up,"Palmer, Ryan (110)",0.20077999999999996,"Spieth, Jordan (-130)",-0.2420859999999999,55,61,loss,-55
+AT&T Pebble Beach Pro-Am,R1 Match-Up,"Todd, Brendon (105)",0.0974879999999998,"Knox, Russell (-125)",-0.1636479999999999,27,28,win,28
+AT&T Pebble Beach Pro-Am,R1 Match-Up,"Aphibarnrat, Kiradech (205)",0.0659749999999999,"McNealy, Maverick (-256)",-0.09580499999999992,18,37,win,37
+AT&T Pebble Beach Pro-Am,R1 Match-Up,"Dahmen, Joel (-135)",0.06635900000000006,"Walker, Jimmy (115)",-0.16762750000000004,18,13,loss,-18
+AT&T Pebble Beach Pro-Am,R1 Match-Up,"Garnett, Brice (115)",0.07011949999999989,"Cink, Stewart (-135)",-0.1260502,19,22,win,22
+AT&T Pebble Beach Pro-Am,R2 Match-Up,"Hagy, Brandon (150)",0.05747499999999994,"Sigg, Greyson (-169)",-0.08255409999999996,16,24,win,24
+AT&T Pebble Beach Pro-Am,R2 Match-Up,"Palmer, Ryan (120)",0.20681000000000016,"Spieth, Jordan (-141)",-0.22802049999999996,58,70,loss,-58
+AT&T Pebble Beach Pro-Am,R2 Match-Up,"Dahmen, Joel (-130)",0.08849689999999999,"Walker, Jimmy (110)",-0.19143699999999997,25,19,win,19
+AT&T Pebble Beach Pro-Am,R3 Match-Up,"Perez, Pat (-169)",0.09488990000000008,"Watney, Nick (150)",-0.2215250000000002,26,15,win,15
+AT&T Pebble Beach Pro-Am,R3 Match-Up,"Taylor, Nick (145)",0.06967000000000012,"Day, Jason (-164)",-0.09292599999999995,19,28,win,28
+AT&T Pebble Beach Pro-Am,R4 Match-Up,"Dahmen, Joel (145)",0.2767195,"Spieth, Jordan (-164)",-0.2289870999999999,79,115,loss,-79
+AT&T Pebble Beach Pro-Am,R4 Match-Up,"Hoge, Tom (190)",0.05945700000000009,"Cantlay, Patrick (-233)",-0.09242190000000006,17,32,win,32
+AT&T Pebble Beach Pro-Am,R4 Match-Up,"Power, Seamus (-105)",0.08384899999999984,"Day, Jason (-115)",-0.16938339999999996,24,23,win,23
+WM Phoenix Open,R1 Match-Up,"Kirk, Chris (105)",0.09279349999999997,"Knox, Russell (-125)",-0.15952600000000006,26,27,win,27
+WM Phoenix Open,R1 Match-Up,"Schauffele, Xander (-115)",0.09249139999999989,"Spieth, Jordan (-105)",-0.1892290000000001,26,23,win,23
+WM Phoenix Open,R1 Match-Up,"Fitzpatrick, Matthew (145)",0.17889100000000013,"Matsuyama, Hideki (-164)",-0.16469980000000006,50,73,loss,-50
+WM Phoenix Open,R2 Match-Up,"McCarthy, Denny (-110)",0.09444910000000006,"Pereira, Mito (-110)",-0.18444910000000003,26,24,loss,-26
+WM Phoenix Open,R2 Match-Up,"Cantlay, Patrick (-100)",0.14061999999999997,"Thomas, Justin (-120)",-0.2136672999999999,39,39,win,39
+WM Phoenix Open,R2 Match-Up,"Schauffele, Xander (-120)",0.06923239999999997,"Spieth, Jordan (-100)",-0.16856000000000004,19,16,win,16
+WM Phoenix Open,R2 Match-Up,"Ancer, Abraham (105)",0.09681149999999983,"Koepka, Brooks (-125)",-0.16305400000000003,27,28,loss,-27
+WM Phoenix Open,R3 Match-Up,"Cantlay, Patrick (-115)",0.17073220000000022,"Matsuyama, Hideki (-105)",-0.270817,48,42,loss,-48
+WM Phoenix Open,R3 Match-Up,"Schauffele, Xander (-115)",0.12065360000000003,"Koepka, Brooks (-105)",-0.218596,34,30,loss,-34
+WM Phoenix Open,R3 Match-Up,"Theegala, Sahith (110)",0.05188999999999999,"Hadwin, Adam (-130)",-0.11659300000000006,15,16,loss,-15
+WM Phoenix Open,R4 Match-Up,"Cantlay, Patrick (-125)",0.05798600000000009,"Schauffele, Xander (105)",-0.15492850000000014,15,12,win,12
+WM Phoenix Open,R4 Match-Up,"Todd, Brendon (105)",0.056016499999999914,"Mitchell, Keith (-125)",-0.12723399999999996,14,15,loss,-14
+WM Phoenix Open,R4 Match-Up,"Theegala, Sahith (115)",0.07633299999999998,"Hadwin, Adam (-135)",-0.13107880000000005,20,23,win,23
+WM Phoenix Open,R4 Match-Up,"Scheffler, Scottie (-110)",0.10121049999999987,"Koepka, Brooks (-110)",-0.19121050000000006,26,24,win,24
+The Genesis Invitational,R1 Match-Up,"Fowler, Rickie (155)",0.1663444999999999,"Spieth, Jordan (-179)",-0.1535283999999999,45,70,loss,-45
+The Genesis Invitational,R1 Match-Up,"Cantlay, Patrick (-169)",0.06304219999999994,"Koepka, Brooks (150)",-0.17144999999999988,17,10,win,10
+The Genesis Invitational,R1 Match-Up,"Na, Kevin (-100)",0.051960000000000006,"Leishman, Marc (-120)",-0.13254339999999998,14,14,loss,-14
+The Genesis Invitational,R1 Match-Up,"McNealy, Maverick (105)",0.07253949999999998,"Watson, Bubba (-125)",-0.14174199999999992,19,20,win,20
+The Genesis Invitational,R2 Match-Up,"Fowler, Rickie (155)",0.11871049999999994,"Spieth, Jordan (-179)",-0.12438759999999982,31,48,loss,-31
+The Genesis Invitational,R2 Match-Up,"Hovland, Viktor (-125)",0.06070400000000009,"Homa, Max (105)",-0.15802400000000016,16,13,win,13
+The Genesis Invitational,R2 Match-Up,"McNealy, Maverick (-100)",0.05732000000000004,"Watson, Bubba (-120)",-0.1374478,15,15,win,15
+The Genesis Invitational,R3 Match-Up,"Scheffler, Scottie (-115)",0.11102310000000015,"Zalatoris, Will (-105)",-0.20855350000000006,29,25,win,25
+The Genesis Invitational,R3 Match-Up,"Rahm, Jon (-120)",0.07313030000000009,"Cantlay, Patrick (-100)",-0.17281999999999997,19,16,loss,-19
+The Genesis Invitational,R4 Match-Up,"Smith, Cameron (-120)",0.12405920000000004,"Zalatoris, Will (-100)",-0.22848000000000002,32,27,win,27
+The Genesis Invitational,R4 Match-Up,"Van Rooyen, Erik (115)",0.07164599999999988,"Spieth, Jordan (-135)",-0.1272856,19,22,loss,-19
+The Honda Classic,R1 Match-Up,"Oosthuizen, Louis (105)",0.05419200000000002,"Im, Sungjae (-125)",-0.12563200000000008,14,15,loss,-14
+The Honda Classic,R1 Match-Up,"Poulter, Ian (-110)",0.14651569999999992,"Westwood, Lee (-110)",-0.2365157,39,35,loss,-39
+The Honda Classic,R1 Match-Up,"Todd, Brendon (-105)",0.05116699999999996,"Pan, C.T. (-115)",-0.1380421999999999,13,12,loss,-13
+The Honda Classic,R1 Match-Up,"Kirk, Chris (-110)",0.05695579999999989,"Fowler, Rickie (-110)",-0.14695579999999997,15,14,win,14
+The Honda Classic,R1 Match-Up,"Lowry, Shane (-100)",0.09441999999999995,"Fleetwood, Tommy (-120)",-0.1713942999999999,25,25,loss,-25
+The Honda Classic,R1 Match-Up,"Reed, Patrick (135)",0.09996450000000001,"Horschel, Billy (-154)",-0.12231550000000002,26,35,loss,-26
+The Honda Classic,R1 Match-Up,"Johnson, Zach (-105)",0.057075499999999835,"Cink, Stewart (-115)",-0.1437083,15,14,win,14
+The Honda Classic,R2 Match-Up,"Poulter, Ian (-110)",0.1479672999999999,"Westwood, Lee (-110)",-0.2379673,36,33,loss,-36
+The Honda Classic,R2 Match-Up,"Todd, Brendon (105)",0.08734050000000004,"Pan, C.T. (-125)",-0.15473800000000004,21,22,win,22
+The Honda Classic,R2 Match-Up,"Reed, Patrick (135)",0.06140099999999982,"Horschel, Billy (-154)",-0.09523899999999996,15,20,loss,-15
+The Honda Classic,R2 Match-Up,"Lowry, Shane (-100)",0.10505999999999993,"Fleetwood, Tommy (-120)",-0.18112989999999995,25,25,win,25
+The Honda Classic,R2 Match-Up,"Young, Cameron (-115)",0.06268360000000017,"Bezuidenhout, Christiaan (-105)",-0.158146,15,13,loss,-15
+The Honda Classic,R2 Match-Up,"Johnson, Zach (-110)",0.0655507999999998,"Cink, Stewart (-110)",-0.1555508,16,15,win,15
+The Honda Classic,R3 Match-Up,"Oosthuizen, Louis (-120)",0.06758540000000002,"Koepka, Brooks (-100)",-0.16676000000000002,16,13,loss,-16
+The Honda Classic,R4 Match-Up,"Poulter, Ian (130)",0.19721900000000003,"Koepka, Brooks (-149)",-0.1992851000000001,47,61,loss,-47
+The Honda Classic,R4 Match-Up,"Wu, Dylan (160)",0.16610000000000014,"Mitchell, Keith (-189)",-0.15620500000000004,39,62,loss,-39
+The Honda Classic,R4 Match-Up,"Kitayama, Kurt (145)",0.12935200000000013,"Straka, Sepp (-164)",-0.13214559999999997,31,45,loss,-31
+The Honda Classic,R4 Match-Up,"Hughes, Mackenzie (-120)",0.0794804,"Westwood, Lee (-100)",-0.17976000000000003,19,16,loss,-19
+The Honda Classic,R4 Match-Up,"Hubbard, Mark (-125)",0.09391400000000005,"Watney, Nick (105)",-0.19584650000000003,22,18,win,18
+The Honda Classic,R4 Match-Up,"Berger, Daniel (-105)",0.1365185,"Lowry, Shane (-115)",-0.21989210000000003,32,30,loss,-32
+The Honda Classic,R4 Match-Up,"Seiffert, Chase (155)",0.18225649999999982,"Lee, Kyounghoon (-179)",-0.16326279999999993,43,67,win,67
