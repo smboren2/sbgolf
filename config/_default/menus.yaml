@@ -4,21 +4,21 @@
 #   The weight parameter defines the order that the links will appear in.
 
 main:
+  - name: Blog Posts
+    url: "#post"
+    weight: 10
+  - name: DFS
+    url: "#dfs"
+    weight: 20
+  - name: Betting
+    url: '#posts'
+    weight: 30
   - name: Live Leaderboard
     url: '#about'
     weight: 40
-  - name: Betting
-    url: '#posts'
-    weight: 10
-  - name: DFS
-    url: '#dfs'
-    weight: 20
   - name: Course Key Stats
     url: '#projects'
-    weight: 30
-  - name: Talks
-    url: '#talks'
     weight: 50
-  - name: Publications
+  - name: Blog Posts  
     url: '#featured'
     weight: 60
