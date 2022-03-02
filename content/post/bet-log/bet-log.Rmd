@@ -1,0 +1,89 @@
+---
+title: ''
+author: "Sean Boren"
+output: html_document
+design:
+  columns: "1"
+weight: 1
+---
+
+```{r, echo=FALSE, warning=FALSE, message=FALSE,results='hide'}
+bet_df <- readr::read_csv("../../static/data/bet_log.csv")
+```
+<br>
+<br>
+
+
+## 2022 Bet Log
+
+Based on our model and using an optimal betting strategy, the information below provides an idea on
+profit and loss. It is separated out based on tournaments. 
+
+<div align="center">
+
+```{r, warning=FALSE, message=FALSE, echo = FALSE}
+reactable(bet_df, class = "table",
+          pagination = FALSE, highlight = TRUE, striped = TRUE, 
+          theme = reactableTheme(cellStyle = list(display = "flex", flexDirection = "column", justifyContent = "center")),
+          groupBy = "event_name",
+          defaultColDef = colDef(headerStyle = list(`border-bottom` = "solid", 
+                                                               fontFamily = "Josefin Sans, sans-serif",
+                                                               fontSize = "18px")),
+          style = list(fontFamily = "Josefin Sans, sans-serif", fontSize = "16px", maxWidth = 1400),
+          columns = list(
+            event_name = colDef(name = "Event", maxWidth = 325, 
+                                 style = list(position = "sticky", left = 0, zIndex = 1),
+      headerStyle = list(position = "sticky", left = 0, zIndex = 1, background = "#fff",
+                         `border-bottom` = "solid")
+            ),
+            bet_type = colDef("Bet Type", maxWidth = 125),
+            pick = colDef("Pick", maxWidth = 200, 
+                          style = list(borderLeft = "2px solid rgba(236, 236, 236, 1)")),
+            pick_ev = colDef("EV", format = colFormat(percent = TRUE, digits = 1), maxWidth = 75),
+            opponent = colDef("Opponent", maxWidth = 200,
+                              style = list(borderLeft = "2px solid rgba(236, 236, 236, 1)")),
+            opponent_ev = colDef("EV", format = colFormat(percent = TRUE, digits = 1), align = "center", maxWidth = 75),
+            outcome = colDef("Outcome", align = "center", maxWidth = 100),
+            risk_amount = colDef("Risk Amount", align = "center", maxWidth = 100,
+                                 style = list(borderLeft = "2px solid rgba(236, 236, 236, 1)")),
+            win_amount = colDef("Win Amount", align = "center", maxWidth = 100),
+            bet_result = colDef("Bet Result", align = "center", maxWidth = 100, aggregate = "sum",
+                                cell = function(value) {
+                                  if (value >= 0) paste0("+", value) else value
+                                },
+                                style = JS("function(rowInfo) {
+                                            const value = rowInfo.row['bet_result']
+                                            let color
+                                            if (value > 0) {
+                                              color = '#008000'
+                                            } else if (value < 0) {
+                                              color = '#e00000'
+                                            } else {
+                                              color = '#777'
+                                            }
+                                            
+                                            return { color: color, fontWeight: 'bold' }
+                                           }"))),
+          
+          # columnGroups = list(
+          #   colGroup(name = "Wagered On", columns = c("pick","pick_odds","pick_ev")),
+          #   colGroup(name = "Wagered Against", columns = c("opponent","opponent_odds","opponent_ev"))
+          # ),
+          
+          rowStyle = function(index) {
+            if(bet_df[index, "bet_result"] > 0) {
+              list(background = "#D0E5C9")
+            } else {
+              list(background = "#FFD0C3")
+            }
+          }
+          )
+
+htmltools::tags$link(
+  href = "https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap", 
+  rel = "stylesheet")
+
+```
+</div>
+
+

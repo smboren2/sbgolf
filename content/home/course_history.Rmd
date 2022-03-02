@@ -52,9 +52,9 @@ reactable::reactable(
   pagination = FALSE, highlight = TRUE, #outlined = TRUE,
   defaultColDef = colDef(headerStyle = list(`border-bottom` = "solid", 
                                             fontFamily = "Josefin Sans, sans-serif",
-                                            fontSize = "10px",
+                                            fontSize = "12px",
                                             vAlign = "center", headerVAlign = "bottom")),
-  style = list(fontFamily = "Josefin Sans, sans-serif", fontSize = "8px", maxWidth = 500),
+  style = list(fontFamily = "Josefin Sans, sans-serif", fontSize = "10px", maxWidth = 500),
   columns = 
     list(
       playerImage160 = colDef(cell = embed_img(), minWidth = 40,
