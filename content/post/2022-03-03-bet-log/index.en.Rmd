@@ -1,53 +1,75 @@
 ---
-title: ''
+title: "2022 Bet Log"
 author: "Sean Boren"
-output: html_document
-design:
-  columns: "1"
-weight: 1
+date: '2022-03-03'
+categories: []
+featured: no
+image:
+  caption: ''
+  focal_point: ''
+  preview_only: no
+lastmod: '2022-03-03T13:48:45-06:00'
+projects: []
+slug: bet-log
+subtitle: ''
+summary: ''
+tags: []
+authors: []
 ---
 
+
 ```{r, echo=FALSE, warning=FALSE, message=FALSE,results='hide'}
-bet_df <- readr::read_csv("../../static/data/bet_log.csv")
+bet_df <- readr::read_csv("bet_log.csv")
 ```
-<br>
-<br>
 
+There are various approaches to modeling events and every predictive model will have its strengths 
+and weaknesses. I've recognized that the current iteration of my model has some major weaknesses, 
+but I've also found that it is profitable in single round head-to-head matchups when backtesting. 
+From a wagering perspective, that is really all we care about; consistently profiting. 
+While I intend to refine the model that produces the +EV plays for each round, I also plan on 
+moving forward with this iteration for wagering purposes. 
 
-## 2022 Bet Log
+For transparency, I will provide all of the wagers and outcomes for anything greater than 5% 
+positive expected value and the results will be against the closing number at Draftkings Sportsbook.
 
-Based on our model and using an optimal betting strategy, the information below provides an idea on
-profit and loss. It is separated out based on tournaments. 
+If you look through the results, you'll notice some bias in the model. It tends to bet on/against 
+certain individuals which is something you should keep in mind week over week if you are using 
+my +EV matchups to make a wager. 
+
 
 <div align="center">
 
 ```{r, warning=FALSE, message=FALSE, echo = FALSE}
-reactable(bet_df, class = "table",
+library(reactable)
+library(reactablefmtr)
+library(dplyr)
+reactable(select(bet_df, -outcome), 
+          class = "table",
           pagination = FALSE, highlight = TRUE, striped = TRUE, 
           theme = reactableTheme(cellStyle = list(display = "flex", flexDirection = "column", justifyContent = "center")),
           groupBy = "event_name",
           defaultColDef = colDef(headerStyle = list(`border-bottom` = "solid", 
                                                                fontFamily = "Josefin Sans, sans-serif",
-                                                               fontSize = "18px")),
-          style = list(fontFamily = "Josefin Sans, sans-serif", fontSize = "16px", maxWidth = 1400),
+                                                               fontSize = "14px")),
+          style = list(fontFamily = "Josefin Sans, sans-serif", fontSize = "12px", maxWidth = 1225),
           columns = list(
             event_name = colDef(name = "Event", maxWidth = 325, 
                                  style = list(position = "sticky", left = 0, zIndex = 1),
       headerStyle = list(position = "sticky", left = 0, zIndex = 1, background = "#fff",
                          `border-bottom` = "solid")
             ),
-            bet_type = colDef("Bet Type", maxWidth = 125),
-            pick = colDef("Pick", maxWidth = 200, 
+            bet_type = colDef("Bet Type", maxWidth = 100),
+            pick = colDef("Pick", maxWidth = 225, 
                           style = list(borderLeft = "2px solid rgba(236, 236, 236, 1)")),
             pick_ev = colDef("EV", format = colFormat(percent = TRUE, digits = 1), maxWidth = 75),
-            opponent = colDef("Opponent", maxWidth = 200,
+            opponent = colDef("Opponent", maxWidth = 225,
                               style = list(borderLeft = "2px solid rgba(236, 236, 236, 1)")),
             opponent_ev = colDef("EV", format = colFormat(percent = TRUE, digits = 1), align = "center", maxWidth = 75),
-            outcome = colDef("Outcome", align = "center", maxWidth = 100),
-            risk_amount = colDef("Risk Amount", align = "center", maxWidth = 100,
+            #outcome = colDef("Outcome", align = "center", maxWidth = 100),
+            risk_amount = colDef("Risk", align = "center", maxWidth = 50,
                                  style = list(borderLeft = "2px solid rgba(236, 236, 236, 1)")),
-            win_amount = colDef("Win Amount", align = "center", maxWidth = 100),
-            bet_result = colDef("Bet Result", align = "center", maxWidth = 100, aggregate = "sum",
+            win_amount = colDef("Win", align = "center", maxWidth = 50),
+            bet_result = colDef("Result", align = "center", maxWidth = 60, aggregate = "sum",
                                 cell = function(value) {
                                   if (value >= 0) paste0("+", value) else value
                                 },
