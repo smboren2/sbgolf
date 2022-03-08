@@ -8,6 +8,6 @@ google_fonts ="family=Baloo+Paaji+2&"
 
 # Font families
 heading_font = "Baloo Paaji 2"
-body_font = "Baloo Paaji 2"
+body_font = "Roboto Condensed"
 nav_font = "Baloo Paaji 2"
 mono_font = "Baloo Paaji 2"

@@ -8,7 +8,7 @@ image:
   caption: ''
   focal_point: ''
   preview_only: no
-lastmod: '2022-03-03T13:48:45-06:00'
+lastmod: '2022-03-03T13:48:45'
 projects: []
 slug: bet-log
 subtitle: ''
@@ -50,26 +50,22 @@ reactable(select(bet_df, -outcome),
           groupBy = "event_name",
           defaultColDef = colDef(headerStyle = list(`border-bottom` = "solid", 
                                                                fontFamily = "Josefin Sans, sans-serif",
-                                                               fontSize = "14px")),
-          style = list(fontFamily = "Josefin Sans, sans-serif", fontSize = "12px", maxWidth = 1225),
+                                                               fontSize = "10px")),
+          style = list(fontFamily = "Josefin Sans, sans-serif", color = "#333333", fontSize = "11px", maxWidth = 905),
           columns = list(
-            event_name = colDef(name = "Event", maxWidth = 325, 
-                                 style = list(position = "sticky", left = 0, zIndex = 1),
-      headerStyle = list(position = "sticky", left = 0, zIndex = 1, background = "#fff",
-                         `border-bottom` = "solid")
-            ),
-            bet_type = colDef("Bet Type", maxWidth = 100),
-            pick = colDef("Pick", maxWidth = 225, 
+            event_name = colDef(name = "Event", maxWidth = 250),
+            bet_type = colDef("Bet Type", maxWidth = 85),
+            pick = colDef("Pick", maxWidth = 100, 
                           style = list(borderLeft = "2px solid rgba(236, 236, 236, 1)")),
             pick_ev = colDef("EV", format = colFormat(percent = TRUE, digits = 1), maxWidth = 75),
-            opponent = colDef("Opponent", maxWidth = 225,
+            opponent = colDef("Opponent", maxWidth = 100,
                               style = list(borderLeft = "2px solid rgba(236, 236, 236, 1)")),
             opponent_ev = colDef("EV", format = colFormat(percent = TRUE, digits = 1), align = "center", maxWidth = 75),
             #outcome = colDef("Outcome", align = "center", maxWidth = 100),
             risk_amount = colDef("Risk", align = "center", maxWidth = 50,
                                  style = list(borderLeft = "2px solid rgba(236, 236, 236, 1)")),
             win_amount = colDef("Win", align = "center", maxWidth = 50),
-            bet_result = colDef("Result", align = "center", maxWidth = 60, aggregate = "sum",
+            bet_result = colDef("Result", align = "center", maxWidth = 50, aggregate = "sum",
                                 cell = function(value) {
                                   if (value >= 0) paste0("+", value) else value
                                 },
