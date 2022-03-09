@@ -6,7 +6,7 @@ design:
 weight: 1
 ---
 
-<center> <h2> Bay Hill Course History</h2> </center>
+<center> <h2> TPC Sawgrass Course History</h2> </center>
 
 ```{r, echo=FALSE, warning=FALSE, message=FALSE,results='hide'}
 course_hist <- readr::read_csv("../../static/data/course_history.csv")
@@ -44,26 +44,28 @@ blue_pal <- function(x) {
 <div align="center">
 
 ```{r, warning=FALSE, message=FALSE, echo = FALSE}
+
 reactable::reactable(
+  #theme = nytimes(),
   course_hist, 
   defaultSorted = list(sg_mean = "desc"),
   theme = reactableTheme(cellStyle = list(display = "flex", flexDirection = "column", justifyContent = "center")),
   #compact = TRUE, 
   pagination = FALSE, highlight = TRUE, #outlined = TRUE,
-  defaultColDef = colDef(headerStyle = list(`border-bottom` = "solid", 
+  defaultColDef = colDef(headerStyle = list(`border-bottom` = "solid", borderWidth = "2px",
+                                            textTransform = "uppercase",
                                             fontFamily = "Josefin Sans, sans-serif",
                                             fontSize = "12px",
                                             vAlign = "center", headerVAlign = "bottom")),
-  style = list(fontFamily = "Josefin Sans, sans-serif", fontSize = "10px", maxWidth = 500),
+  style = list(fontFamily = "Josefin Sans, sans-serif", color = "#333333", fontSize = "14px", maxWidth = 800),
   columns = 
     list(
-      playerImage160 = colDef(cell = embed_img(), minWidth = 40,
-                              align = "right", name = ""),
+      playerImage160 = colDef(cell = embed_img(), minWidth = 40, align = "right", name = ""),
       dg_id = colDef(show = FALSE),
       player_name = colDef(name = "Player"),
       #sg_total = colDef(name = "Total SG", align = "center", minWidth = 65),
-      rounds = colDef(name = "Total Rounds", align = "center", minWidth = 55),
-      sg_mean = colDef(name = "Avg SG", align = "center", minWidth = 55),
+      rounds = colDef(name = "Rounds", align = "center", minWidth = 60),
+      sg_mean = colDef(name = "Avg SG", align = "center", minWidth = 70),
       `2017` = colDef(name = "2017", align = "center", minWidth = 50,
                       style = function(value) {
                         if(is.na(value)) {
@@ -75,7 +77,7 @@ reactable::reactable(
                         }
                         
                         list(background = color, 
-                             borderLeft = "1px solid rgba(0, 0, 0, 1)",
+                             borderLeft = "2px solid rgba(0, 0, 0, 1)",
                              align = "center")}),
       `2018` = colDef(name = "2018", align = "center", minWidth = 50,
                       style = function(value) {
@@ -125,6 +127,7 @@ reactable::reactable(
                         
                         list(background = color, 
                              align = "center")})))
+
 
 
 htmltools::tags$link(
